@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <!-- Меню -->
+    <nav class="main-menu">
+        <div class="logo">
+            <img src="piccolo.jpg" alt="Логотип Piccolo">
+        </div>
+        <ul class="menu-list" id="menu-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="menu.html">Меню</a></li>
+            <li><a href="clients.html">Наши клиенты</a></li>
+            <li><a href="guests.html">Гости</a></li>
+            <li><a href="seasonal-menu.html">Сезонное меню</a></li>
+            <li><a href="new-items.html">Новинки</a></li>
+        </ul>
+        <div class="burger-menu" id="burger-menu" aria-label="Меню">
+            &#9776;
+        </div>
+    </nav>
+
+    <!-- Раздел Меню -->
+    <section class="menu-section">
+        <h1>Наше меню</h1>
+        <p>Вкусные блюда на любой вкус!</p>
+
+        <div class="menu-images">
+            <!-- Закуски и салаты -->
+            <div class="menu-image">
+                <img src="zakuski.jpg" alt="Закуски и салаты">
+                <h2>Закуски и салаты</h2>
+            </div>
+
+            <!-- Горячие блюда -->
+            <div class="menu-image">
+                <img src="goryachiebluda.jpg" alt="Горячие блюда">
+                <h2>Горячие блюда</h2>
+            </div>
+
+            <!-- Десерты -->
+            <div class="menu-image">
+                <img src="deserti.jpg" alt="Десерты">
+                <h2>Десерты</h2>
+            </div>
+
+            <!-- Детское меню -->
+            <div class="menu-image">
+                <img src="detskoemenu.jpg" alt="Детское меню">
+                <h2>Детское меню</h2>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const burgerMenu = document.getElementById('burger-menu');
+        const menuList = document.getElementById('menu-list');
+
+        burgerMenu.addEventListener('click', () => {
+            menuList.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

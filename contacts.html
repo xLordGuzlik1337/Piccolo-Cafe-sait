@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="contacts.css">
+</head>
+<body>
+    <!-- Меню -->
+    <nav class="main-menu">
+        <div class="logo">
+            <img src="piccolo.jpg" alt="Логотип Piccolo">
+        </div>
+        <ul class="menu-list" id="menu-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="menu.html">Меню</a></li>
+            <li><a href="clients.html">Наши клиенты</a></li>
+            <li><a href="guests.html">Гости</a></li>
+            <li><a href="seasonal-menu.html">Сезонное меню</a></li>
+            <li><a href="new-items.html">Новинки</a></li>
+        </ul>
+        <div class="burger-menu" id="burger-menu">
+            &#9776;
+        </div>
+    </nav>
+
+    <!-- Раздел Контакты -->
+    <section class="contacts">
+        <h1>Наши контакты</h1>
+        <p>Мы всегда рады вашим вопросам и предложениям!</p>
+
+        <div class="contact-info">
+            <div class="info-block">
+                <h2>Адрес:</h2>
+                <p>г. Брест, ул. Коммерческая 5в</p>
+            </div>
+            <div class="info-block">
+                <h2>Телефон:</h2>
+                <p>+375 (33) 333-40-40</p>
+            </div>
+            <div class="info-block">
+                <h2>Email:</h2>
+                <p>piccolo.cafe@mail.ru</p>
+            </div>
+            <div class="info-block">
+                <h2>График работы:</h2>
+                <p>Пн-Пт: 08:00 - 21:00<br>Сб-Вс: 09:00 - 22:00</p>
+            </div>
+        </div>
+
+        <!-- Социальные сети -->
+        <div class="social-links">
+            <h2>Мы в социальных сетях:</h2>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/piccolo.brest/" target="_blank" class="social-icon instagram">Instagram</a>
+                <a href="https://t.me" target="_blank" class="social-icon telegram">Telegram</a>
+                <a href="https://viber.com" target="_blank" class="social-icon viber">Viber</a>
+                <a href="https://www.whatsapp.com" target="_blank" class="social-icon whatsapp">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const burgerMenu = document.getElementById('burger-menu');
+        const menuList = document.getElementById('menu-list');
+
+        burgerMenu.addEventListener('click', () => {
+            menuList.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+/* Стили для страницы "О нас" */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Меню */
+.main-menu {
+    background-color: #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Логотип */
+.main-menu .logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Меню */
+.main-menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Элементы меню */
+.main-menu li {
+    margin: 0 15px;
+}
+
+/* Ссылки в меню */
+.main-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-menu a:hover {
+    color: #ff6347;
+}
+
+/* Бургер-меню */
+.burger-menu {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Адаптивное меню для мобильных */
+@media (max-width: 768px) {
+    .main-menu ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #333;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .main-menu.open ul {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .main-menu li {
+        margin: 10px 0;
+    }
+
+    .main-menu a {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+}
+
+/* Стили для секции "О нас" */
+.about {
+    padding: 50px;
+    text-align: center;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Преимущества */
+.about ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.about ul li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+/* Команда */
+.team {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team-member {
+    text-align: center;
+    max-width: 250px;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+.team-member p {
+    font-size: 1rem;
+}
+
+/* Отзывы */
+blockquote {
+    font-style: italic;
+    margin: 20px auto;
+    max-width: 800px;
+    border-left: 4px solid #ff6347;
+    padding-left: 20px;
+    color: #555;
+}
+
+blockquote p {
+    font-size: 1.2rem;
+}
+
+/* Галерея */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}

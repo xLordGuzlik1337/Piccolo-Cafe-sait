@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <!-- Меню -->
+    <nav class="main-menu" id="main-menu">
+        <div class="logo">
+            <img src="logo.png" alt="Логотип">
+        </div>
+        <!-- Бургер-меню для мобильных -->
+        <div class="burger-menu" id="burger-menu">
+            &#9776; <!-- Символ бургер-меню -->
+        </div>
+        <ul id="menu-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="clients.html">Наши клиенты</a></li>
+            <li><a href="guests.html">Гости</a></li>
+            <li><a href="seasonal-menu.html">Сезонное меню</a></li>
+            <li><a href="new-items.html">Новинки</a></li>
+        </ul>
+    </nav>
+
+    <!-- Раздел "О нас" -->
+    <section class="about">
+        <h1>О нас</h1>
+        <p>Мы команда профессионалов, создающих незабываемые кулинарные шедевры. Мы гордимся качеством наших блюд и уникальностью каждого рецепта, с любовью заботясь о своих клиентах.</p>
+    </section>
+
+    <script>
+        // Скрипт для бургер-меню
+        const burgerMenu = document.getElementById('burger-menu');
+        const mainMenu = document.getElementById('main-menu');  // Меню
+        const menuList = document.getElementById('menu-list');
+        
+        burgerMenu.addEventListener('click', () => {
+            mainMenu.classList.toggle('open');  // Меняем класс у родителя, а не у самого списка
+        });
+    </script>
+</body>
+</html>

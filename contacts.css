@@ -1,0 +1,231 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #fdfbfb, #ebedee);
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Меню */
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #ff6a00, #ff0084);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-menu .logo img {
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.menu-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-list li {
+    margin: 0 15px;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-list a:hover {
+    color: #fff8dc;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Бургер-меню */
+.burger-menu {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .menu-list.open {
+        display: flex;
+    }
+
+    .menu-list li {
+        margin: 10px 0;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-list a {
+        font-size: 1rem;
+    }
+
+    .contacts h1 {
+        font-size: 2.5rem;
+    }
+
+    .contacts p {
+        font-size: 1.2rem;
+    }
+
+    .info-block {
+        width: 90%;
+    }
+}
+
+/* Стили для секции Контакты */
+.contacts {
+    padding: 50px 20px;
+    text-align: center;
+    color: #333;
+}
+
+.contacts h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #ff6a00, #ff0084);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.contacts p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.info-block {
+    background: linear-gradient(135deg, #ff6a00, #ff0084);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    max-width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.info-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.info-block h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.info-block p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Стили для социальных сетей */
+.social-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-links h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icon {
+    display: block;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 15px 25px;
+    width: 250px;
+    text-align: center;
+    border-radius: 25px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon:hover {
+    background-color: #ff6a00;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon.instagram {
+    background-color: #e4405f;
+}
+
+.social-icon.telegram {
+    background-color: #0088cc;
+}
+
+.social-icon.viber {
+    background-color: #665cac;
+}
+
+.social-icon.whatsapp {
+    background-color: #25d366;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .social-icons {
+        flex-direction: column;
+    }
+
+    .social-icon {
+        width: 80%;
+        font-size: 1.2rem;
+        padding: 12px 20px;
+    }
+}
