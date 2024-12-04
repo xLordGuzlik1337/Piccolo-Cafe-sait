@@ -162,9 +162,28 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
+.service-card img {
+    max-width: 80%; /* Уменьшаем ширину изображений */
+    height: auto; /* Сохраняем пропорции */
+    margin: 0 auto; /* Центрируем изображение */
+    border-radius: 5px; /* Делаем края чуть скругленными */
+    transition: transform 0.3s ease; /* Добавляем эффект наведения */
+}
+
+.service-card img:hover {
+    transform: scale(1.05); /* Увеличиваем изображение при наведении */
+}
+
 .service-card h3 {
     font-size: 1.2rem;
     margin: 10px 0;
+}
+
+/* Медиа-запрос для еще меньших изображений на больших экранах */
+@media (min-width: 1024px) {
+    .service-card img {
+        max-width: 60%; /* Еще меньше для больших экранов */
+    }
 }
 
 /* Футер */
