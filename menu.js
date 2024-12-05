@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevImage = document.getElementById("prev-image");
     const nextImage = document.getElementById("next-image");
     let currentImageIndex = 0;
-    let isZoomed = false;
-    let startX, startY;
 
     // Открытие модального окна
     function openModal(index) {
@@ -17,73 +15,64 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Закрытие модального окна
-    function closeModalWindow() {
+    closeModal.addEventListener("click", () => {
         modal.style.display = "none";
-    }
+    });
+
+    // Открытие модального окна по изображению
+    images.forEach((image, index) => {
+        image.addEventListener("click", () => {
+            openModal(index);
+        });
+    });
 
     // Переход к предыдущему изображению
-    function showPrevImage() {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    prevImage.addEventListener("click", () => {
+        currentImageIndex = (currentImageIndex === 0) ? images.length - 1 : currentImageIndex - 1;
         modalImage.src = images[currentImageIndex].src;
-    }
+    });
 
     // Переход к следующему изображению
-    function showNextImage() {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
+    nextImage.addEventListener("click", () => {
+        currentImageIndex = (currentImageIndex === images.length - 1) ? 0 : currentImageIndex + 1;
         modalImage.src = images[currentImageIndex].src;
+    });
+
+    // Бургер-меню
+    const burgerMenu = document.getElementById("burger-menu");
+    const menuList = document.getElementById("menu-list");
+
+    burgerMenu.addEventListener("click", () => {
+        menuList.classList.toggle("open");
+    });
+
+    // Добавление зума при клике на изображение в модальном окне
+    let zoomLevel = 1;
+    const maxZoom = 3; // Максимальный уровень зума
+    const zoomStep = 0.1; // Шаг увеличения
+
+    // Функция для увеличения изображения
+    function zoomImage() {
+        if (zoomLevel < maxZoom) {
+            zoomLevel += zoomStep;
+            modalImage.style.transform = `scale(${zoomLevel})`;
+        }
     }
 
-    // Добавляем обработчики событий для изображений
-    images.forEach((image, index) => {
-        image.addEventListener("click", () => openModal(index));
-    });
+    // Функция для уменьшения изображения
+    function unzoomImage() {
+        if (zoomLevel > 1) {
+            zoomLevel -= zoomStep;
+            modalImage.style.transform = `scale(${zoomLevel})`;
+        }
+    }
 
-    // Обработчики событий для модального окна
-    closeModal.addEventListener("click", closeModalWindow);
-    prevImage.addEventListener("click", showPrevImage);
-    nextImage.addEventListener("click", showNextImage);
-
-    // Закрытие модального окна при клике вне изображения
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModalWindow();
-    });
-
-    // Обработчик для клика по изображению в меню
-    images.forEach(image => {
-        image.addEventListener("click", () => {
-            if (!isZoomed) {
-                image.classList.add("zoomed");
-                isZoomed = true;
-            } else {
-                image.classList.remove("zoomed");
-                image.style.left = "";
-                image.style.top = "";
-                isZoomed = false;
-            }
-        });
-
-        // Обработчики для перетаскивания увеличенного изображения
-        image.addEventListener("mousedown", (e) => {
-            if (isZoomed) {
-                startX = e.clientX - image.offsetLeft;
-                startY = e.clientY - image.offsetTop;
-                image.classList.add("grabbing");
-
-                const onMouseMove = (e) => {
-                    image.style.position = "absolute";
-                    image.style.left = `${e.clientX - startX}px`;
-                    image.style.top = `${e.clientY - startY}px`;
-                };
-
-                const onMouseUp = () => {
-                    document.removeEventListener("mousemove", onMouseMove);
-                    document.removeEventListener("mouseup", onMouseUp);
-                    image.classList.remove("grabbing");
-                };
-
-                document.addEventListener("mousemove", onMouseMove);
-                document.addEventListener("mouseup", onMouseUp);
-            }
-        });
+    // Добавляем обработчики для зума
+    modalImage.addEventListener("wheel", (e) => {
+        if (e.deltaY > 0) {
+            unzoomImage();
+        } else {
+            zoomImage();
+        }
     });
 });
