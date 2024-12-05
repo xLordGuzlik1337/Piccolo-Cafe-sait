@@ -1,11 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
     const images = document.querySelectorAll(".menu-image img");
+    const modal = document.getElementById("image-modal");
+    const modalImage = document.getElementById("modal-image");
+    const closeModal = document.getElementById("close-modal");
+    const prevImage = document.getElementById("prev-image");
+    const nextImage = document.getElementById("next-image");
+    let currentImageIndex = 0;
+    let isZoomed = false;
+    let startX, startY;
 
+    // Открытие модального окна
+    function openModal(index) {
+        modal.style.display = "flex";
+        modalImage.src = images[index].src;
+        currentImageIndex = index;
+    }
+
+    // Закрытие модального окна
+    function closeModalWindow() {
+        modal.style.display = "none";
+    }
+
+    // Переход к предыдущему изображению
+    function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        modalImage.src = images[currentImageIndex].src;
+    }
+
+    // Переход к следующему изображению
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        modalImage.src = images[currentImageIndex].src;
+    }
+
+    // Добавляем обработчики событий для изображений
+    images.forEach((image, index) => {
+        image.addEventListener("click", () => openModal(index));
+    });
+
+    // Обработчики событий для модального окна
+    closeModal.addEventListener("click", closeModalWindow);
+    prevImage.addEventListener("click", showPrevImage);
+    nextImage.addEventListener("click", showNextImage);
+
+    // Закрытие модального окна при клике вне изображения
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModalWindow();
+    });
+
+    // Обработчик для клика по изображению в меню
     images.forEach(image => {
-        let isZoomed = false;
-        let startX, startY;
-
-        // Обработчик для клика по изображению
         image.addEventListener("click", () => {
             if (!isZoomed) {
                 image.classList.add("zoomed");
