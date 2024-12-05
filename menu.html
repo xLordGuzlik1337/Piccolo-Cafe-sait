@@ -34,25 +34,18 @@
         <p>Вкусные блюда на любой вкус!</p>
 
         <div class="menu-images">
-            <!-- Закуски и салаты -->
             <div class="menu-image">
                 <img src="zakuski.jpg" alt="Закуски и салаты">
                 <h2>Закуски и салаты</h2>
             </div>
-
-            <!-- Горячие блюда -->
             <div class="menu-image">
                 <img src="goryachiebluda.jpg" alt="Горячие блюда">
                 <h2>Горячие блюда</h2>
             </div>
-
-            <!-- Десерты -->
             <div class="menu-image">
                 <img src="deserti.jpg" alt="Десерты">
                 <h2>Десерты</h2>
             </div>
-
-            <!-- Детское меню -->
             <div class="menu-image">
                 <img src="detskoemenu.jpg" alt="Детское меню">
                 <h2>Детское меню</h2>
@@ -60,13 +53,14 @@
         </div>
     </section>
 
-    <script>
-        const burgerMenu = document.getElementById('burger-menu');
-        const menuList = document.getElementById('menu-list');
+    <!-- Модальное окно -->
+    <div class="modal" id="image-modal">
+        <span class="close" id="close-modal">&times;</span>
+        <span class="arrow left" id="prev-image">&#10094;</span>
+        <img src="" alt="Просмотр изображения" id="modal-image">
+        <span class="arrow right" id="next-image">&#10095;</span>
+    </div>
 
-        burgerMenu.addEventListener('click', () => {
-            menuList.classList.toggle('open');
-        });
-    </script>
+    <script src="menu.js"></script>
 </body>
 </html>
