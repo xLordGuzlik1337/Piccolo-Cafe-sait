@@ -126,7 +126,7 @@ body {
 .menu-image img {
     width: 100%;
     height: auto;
-    object-fit: contain; /* Полный вид изображения */
+    object-fit: contain;
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -140,15 +140,12 @@ body {
 /* Адаптивность для мобильных устройств */
 @media (max-width: 480px) {
     .menu-images {
-        grid-template-columns: repeat(1, 1fr); /* Одно изображение в строке */
+        grid-template-columns: repeat(1, 1fr);
         gap: 20px;
     }
 
     .menu-image img {
-        width: 100%;
-        height: auto; /* Сохраняем пропорции */
-        max-height: 300px; /* Ограничиваем высоту */
-        object-fit: contain;
+        max-height: 300px;
     }
 
     .menu-section h1 {
@@ -169,31 +166,6 @@ body {
     }
 }
 
-/* Адаптивность для планшетов (481px–768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-    .menu-images {
-        grid-template-columns: repeat(2, 1fr); /* Две колонки изображений */
-        gap: 25px;
-    }
-
-    .menu-image img {
-        width: 100%;
-        height: auto;
-        max-height: none;
-    }
-
-    .menu-section h1 {
-        font-size: 28px;
-    }
-
-    .menu-section p {
-        font-size: 16px;
-    }
-
-    .menu-image h2 {
-        font-size: 22px;
-    }
-}
 /* Стили модального окна */
 .modal {
     display: none;
@@ -210,9 +182,9 @@ body {
 }
 
 .modal img {
-    max-width: 95%;  /* Уменьшаем максимальную ширину, чтобы изображение не выходило за пределы экрана */
-    max-height: 95%; /* Ограничиваем максимальную высоту */
-    object-fit: contain; /* Сохраняем пропорции изображения */
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
 }
 
 .modal .close {
@@ -249,15 +221,9 @@ body {
     }
 }
 
-
 /* Стиль для больших экранов (769px и выше) */
 @media (min-width: 769px) {
     .menu-images {
-        grid-template-columns: repeat(3, 1fr); /* Три колонки для больших экранов */
-    }
-
-    .menu-image img {
-        width: 100%;
-        height: auto;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
