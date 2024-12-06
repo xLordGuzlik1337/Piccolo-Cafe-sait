@@ -11,6 +11,7 @@ body {
     position: relative;
 }
 
+
 /* Видео фоновое */
 .hero-video {
     position: absolute;
@@ -54,9 +55,9 @@ body {
 
 /* Меню */
 .main-menu {
-    background: transparent;
-    padding: 15px 0;
-    position: fixed;
+    background: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
+    padding: 7px 1px;
+    position: fixed; /* Фиксируем шапку наверху экрана */
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -64,16 +65,23 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Добавляем плавные переходы */
+}
+.main-menu.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
 }
 
 .main-menu .logo img {
-    width: 50px;
-    height: 50px;
+    width: 60px; /* Логотип */
+    height: auto;
 }
 
 .main-menu ul {
     display: flex;
-    gap: 20px;
+    gap: 90px; /* Расстояние между пунктами меню */
+    margin: 0;
+    padding: 0;
 }
 
 .main-menu ul li {
@@ -92,10 +100,14 @@ body {
     color: #ff6347;
 }
 
-.burger-menu {
-    display: none;
-    font-size: 2rem;
-    color: white;
+/* Для ПК текста в шапке */
+@media (min-width: 1024px) {
+    .main-menu ul li a {
+        font-size: 1.4rem; /* Увеличиваем текст для больших экранов */
+    }
+    .main-menu .logo img {
+        width: 70px; /* Увеличиваем логотип для больших экранов */
+    }
 }
 
 /* Герой-секция */
