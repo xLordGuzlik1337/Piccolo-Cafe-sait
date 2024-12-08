@@ -3,8 +3,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, #fdfbfb, #ebedee);
-    color: #333;
+    background: linear-gradient(120deg, #f5f7fa, #c3cfe2);
+    color: #2c3e50;
     box-sizing: border-box;
 }
 
@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(90deg, #ff6a00, #ff0084);
+    background: linear-gradient(90deg, #3498db, #9b59b6);
     padding: 10px 20px;
     position: sticky;
     top: 0;
@@ -40,7 +40,7 @@ body {
 
 .menu-list a {
     text-decoration: none;
-    color: white;
+    color: #ecf0f1;
     font-size: 1.2rem;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -48,73 +48,21 @@ body {
 }
 
 .menu-list a:hover {
-    color: #fff8dc;
+    color: #f1c40f;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-}
-
-/* Бургер-меню */
-.burger-menu {
-    display: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-}
-
-/* Адаптивность */
-@media (max-width: 1024px) {
-    .menu-list {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .menu-list.open {
-        display: flex;
-    }
-
-    .menu-list li {
-        margin: 10px 0;
-    }
-
-    .burger-menu {
-        display: block;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-list a {
-        font-size: 1rem;
-    }
-
-    .contacts h1 {
-        font-size: 2.5rem;
-    }
-
-    .contacts p {
-        font-size: 1.2rem;
-    }
-
-    .info-block {
-        width: 90%;
-    }
 }
 
 /* Стили для секции Контакты */
 .contacts {
     padding: 50px 20px;
     text-align: center;
-    color: #333;
+    color: #2c3e50;
 }
 
 .contacts h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    background: linear-gradient(to right, #ff6a00, #ff0084);
+    background: linear-gradient(to right, #3498db, #9b59b6);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -125,7 +73,7 @@ body {
 .contacts p {
     font-size: 1.5rem;
     margin-bottom: 30px;
-    color: #666;
+    color: #34495e;
 }
 
 .contact-info {
@@ -136,8 +84,8 @@ body {
 }
 
 .info-block {
-    background: linear-gradient(135deg, #ff6a00, #ff0084);
-    color: white;
+    background: linear-gradient(135deg, #74b9ff, #a29bfe);
+    color: #ecf0f1;
     padding: 20px;
     border-radius: 15px;
     width: 300px;
@@ -163,29 +111,23 @@ body {
 }
 
 /* Стили для социальных сетей */
-.social-links {
-    margin-top: 30px;
-    text-align: center;
-}
-
 .social-links h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #333;
+    color: #2c3e50;
 }
 
 .social-icons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     gap: 15px;
 }
 
 .social-icon {
     display: block;
     text-decoration: none;
-    background-color: #333;
-    color: #fff;
+    background-color: #2c3e50;
+    color: #ecf0f1;
     font-size: 1.5rem;
     padding: 15px 25px;
     width: 250px;
@@ -196,25 +138,58 @@ body {
 }
 
 .social-icon:hover {
-    background-color: #ff6a00;
+    background-color: #1abc9c;
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .social-icon.instagram {
-    background-color: #e4405f;
+    background-color: #e84393;
 }
 
 .social-icon.telegram {
-    background-color: #0088cc;
+    background-color: #0984e3;
 }
 
 .social-icon.viber {
-    background-color: #665cac;
+    background-color: #6c5ce7;
 }
 
 .social-icon.whatsapp {
-    background-color: #25d366;
+    background-color: #00b894;
+}
+/* Бургер-меню */
+.burger-menu {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .menu-list.open {
+        display: flex;
+    }
+
+    .menu-list li {
+        margin: 10px 0;
+    }
 }
 
 /* Адаптивность для мобильных */
