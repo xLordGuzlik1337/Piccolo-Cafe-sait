@@ -15,18 +15,21 @@ body {
 
 /* Меню */
 .main-menu {
-    background-color: #333;
-    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 10;
+    background: linear-gradient(90deg, #3498db, #9b59b6);
+    padding: 10px 20px; /* Увеличено для совпадения с предыдущим стилем */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .main-menu .logo img {
-    width: 150px;
-    height: auto;
+    height: 60px; /* Сделано аналогично предыдущему коду */
+    width: auto;
+    border-radius: 50%; /* Для совпадения с оригиналом */
 }
 
 .menu-list {
@@ -37,16 +40,19 @@ body {
 
 .menu-list li a {
     text-decoration: none;
-    color: white;
+    color: #ecf0f1;
+    font-size: 1.2rem;
     font-weight: bold;
-    transition: background-color 0.3s ease;
-    padding: 10px;
+    transition: background-color 0.3s ease, text-shadow 0.3s ease;
+    padding: 10px 15px; /* Добавлены отступы для лучшего внешнего вида */
+    border-radius: 5px;
 }
 
 .menu-list li a:hover {
-    background-color: #ffb84d;
-    border-radius: 5px;
+    background-color: #f1c40f;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
+
 
 /* Бургер меню для мобильных устройств */
 .burger-menu {
