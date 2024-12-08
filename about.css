@@ -1,6 +1,6 @@
 /* Стили для страницы "О нас" */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Изменён шрифт для совпадения со вторым кодом */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -23,7 +23,7 @@ body {
 
 /* Логотип */
 .main-menu .logo img {
-    height: 60px; /* Совпадает с шапкой из предоставленного кода */
+    height: 60px; /* Совпадает с обоими стилями */
     width: auto;
     border-radius: 50%;
 }
@@ -47,36 +47,14 @@ body {
     color: #ecf0f1;
     font-size: 1.2rem;
     font-weight: bold;
-    transition: all 0.3s ease;
-    position: relative;
+    padding: 10px 15px; /* Добавлены внутренние отступы */
+    border-radius: 5px; /* Добавлено для единства со вторым стилем */
+    transition: background-color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .main-menu a:hover {
-    color: #f1c40f;
+    background-color: #f1c40f;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-}
-
-/* Секция "О нас" */
-.about-section {
-    padding: 50px 20px;
-    text-align: center;
-    color: #2c3e50;
-}
-
-.about-section h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #3498db, #9b59b6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-}
-
-.about-section p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    color: #34495e;
 }
 
 /* Бургер-меню */
