@@ -72,10 +72,13 @@ body {
     opacity: 0;
 }
 
+/* Логотип */
 .main-menu .logo img {
-    width: 60px; /* Логотип */
-    height: auto;
+    height: 60px; /* Совпадает с обоими стилями */
+    width: auto;
+    border-radius: 50%;
 }
+
 
 .main-menu ul {
     display: flex;
