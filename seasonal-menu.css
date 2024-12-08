@@ -19,22 +19,27 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: #333;
+    padding: 10px 20px; /* Уменьшено для унификации с другим стилем */
+    background: linear-gradient(90deg, #3498db, #9b59b6); /* Градиент фона */
     color: white;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .main-menu .logo img {
-    width: 150px;
+    height: 60px; /* Приведено к единому стандарту */
+    width: auto;
+    border-radius: 50%; /* Закругление логотипа */
 }
 
 .menu-list {
     display: flex;
     list-style: none;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .menu-list li {
@@ -42,16 +47,20 @@ body {
 }
 
 .menu-list a {
-    color: white;
+    color: #ecf0f1;
     text-decoration: none;
     font-weight: bold;
-    padding: 5px 0;
-    transition: color 0.3s;
+    padding: 10px 15px; /* Добавлены внутренние отступы */
+    font-size: 1.2rem; /* Приведено к стандарту */
+    transition: color 0.3s, text-shadow 0.3s;
+    border-radius: 5px;
 }
 
 .menu-list a:hover {
-    color: #ffb84d;
+    color: #f1c40f;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
+
 
 /* Стиль бургер-меню для мобильных устройств */
 .burger-menu {
